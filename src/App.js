@@ -8,11 +8,18 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>To do</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="todoapp">
+          <form>
+            <input type="text" />
+          </form>
+          <ul className="todolist">
+            <li>Todo 1</li>
+            <li>Todo 2</li>
+            <li>Todo 3</li>
+          </ul>
+        </div>
       </div>
     );
   }

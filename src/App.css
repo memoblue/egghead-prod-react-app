@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.todoapp {
+  margin: 20px;
+  display: inline-block;
+  text-align: left;
+}
+
+.todolist {
+  margin: 20px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+input[type=checkbox] {
+  margin-right: .75em;
+}
