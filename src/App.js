@@ -36,7 +36,7 @@ class App extends Component {
           <ul className="todolist">
             {this.state.todos.map(item =>
               <li key={item.id}>
-                <input checked={item.isComplete} type="checkbox" />
+                <input defaultChecked={item.isComplete} type="checkbox" />
                 {item.name}
               </li>
             )}
