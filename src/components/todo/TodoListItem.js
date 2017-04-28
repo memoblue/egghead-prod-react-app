@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const TodoListItem = (props) => (
+export const TodoListItem = ({checked, name}) => (
   <li>
-    <input defaultChecked={props.checked} type="checkbox" />
-    {props.name}
+    <input defaultChecked={checked} type="checkbox" />
+    {name}
   </li>
 );

@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const TodoForm = (props) => (
+export const TodoForm = ({currentTodo, handleInputChange}) => (
   <form>
     <input
       type="text"
-      value={props.currentTodo}
-      onChange={props.handleInputChange}
+      value={currentTodo}
+      onChange={handleInputChange}
     />
   </form>
 );
