@@ -1,8 +1,18 @@
 import React from 'react';
 import { TodoListItem } from './TodoListItem'
 
-export const TodoList = ({todos}) => (
+export const TodoList = ({todos, handleToggle}) => (
   <ul className="todolist">
-    {todos.map(item => <TodoListItem  key={item.id} name={item.name} checked={item.isComplete} />)}
+    {todos.map(item => {
+      return (
+        <TodoListItem
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          checked={item.isComplete}
+          handleToggle={handleToggle}
+        />
+      );
+    })}
   </ul>
 );

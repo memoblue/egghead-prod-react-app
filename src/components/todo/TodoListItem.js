@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const TodoListItem = ({checked, name}) => (
+export const TodoListItem = ({id, name, checked, handleToggle}) => (
   <li>
-    <input defaultChecked={checked} type="checkbox" />
+    <input checked={checked} type="checkbox" onChange={() => handleToggle(id)} />
     {name}
   </li>
 );
