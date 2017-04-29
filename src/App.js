@@ -34,7 +34,8 @@ class App extends Component {
        isComplete: false,
        name: this.state.currentTodo
      }],
-     currentTodo: ''
+     currentTodo: '',
+     errorMessage: ''
    });
  }
 
