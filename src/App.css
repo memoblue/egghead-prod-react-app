@@ -38,3 +38,11 @@
 input[type=checkbox] {
   margin-right: .75em;
 }
+
+.error {
+  border: 1px solid #982424;
+  color: #982424;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #f6bfbf;
+}
