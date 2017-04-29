@@ -46,7 +46,6 @@ class App extends Component {
   handleToggle = (id) => {
     const todo = findById(this.state.todos, id);
     const newTodo = toggleTodo(todo);
-    console.log('what', newTodo);
     const updatedTodos = updateTodo(this.state.todos, newTodo);
     this.setState({todos: updatedTodos});
   }
