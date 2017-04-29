@@ -5,28 +5,22 @@ import { TodoForm, TodoList } from './components/todo';
 import { generateId } from './lib/todoHelpers.js'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      todos: [
-        {id: 1, name: 'Some todo item', isComplete: false},
-        {id: 2, name: 'Another todo', isComplete: true},
-        {id: 3, name: 'Is it done yet?', isComplete: false}
-      ],
-      currentTodo: ''
-    }
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEmptySubmit = this.handleEmptySubmit.bind(this);
+  state = {
+    todos: [
+      {id: 1, name: 'Some todo item', isComplete: false},
+      {id: 2, name: 'Another todo', isComplete: true},
+      {id: 3, name: 'Is it done yet?', isComplete: false}
+    ],
+    currentTodo: ''
   }
 
-  handleInputChange(e) {
+  handleInputChange = (e) => {
     this.setState({
       currentTodo: e.target.value
     })
   }
 
- handleSubmit(e) {
+ handleSubmit = (e) => {
    e.preventDefault();
    this.setState({
      todos: [...this.state.todos, {
@@ -39,7 +33,7 @@ class App extends Component {
    });
  }
 
- handleEmptySubmit(e) {
+ handleEmptySubmit = (e) => {
    e.preventDefault();
    this.setState({
      errorMessage: 'Don\'t forget to enter a value'
