@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TodoForm, TodoList} from './components/todo';
-import {generateId, findById, toggleTodo, updateTodo} from './lib/todoHelpers.js'
+import {generateId, findById, toggleTodo, updateTodo, removeTodo} from './lib/todoHelpers.js'
 
 class App extends Component {
   state = {
@@ -43,6 +43,11 @@ class App extends Component {
     });
   }
 
+  handleEmptySubmit = (e) => {
+    e.preventDefault();
+    this.setState({errorMessage: 'Don\'t forget to enter a value'})
+  }
+
   handleToggle = (id) => {
     const todo = findById(this.state.todos, id);
     const newTodo = toggleTodo(todo);
@@ -50,9 +55,10 @@ class App extends Component {
     this.setState({todos: updatedTodos});
   }
 
-  handleEmptySubmit = (e) => {
+  handleRemove = (id, e) => {
     e.preventDefault();
-    this.setState({errorMessage: 'Don\'t forget to enter a value'})
+    const newTodos = removeTodo(this.state.todos, id);
+    this.setState({ todos: newTodos});
   }
 
   render() {
@@ -67,8 +73,12 @@ class App extends Component {
         </div>
         <div className="todoapp">
           {this.state.errorMessage && <div className="error">{this.state.errorMessage}</div>}
-          <TodoForm currentTodo={this.state.currentTodo} handleInputChange={this.handleInputChange} handleSubmit={sumitHandler}/>
-          <TodoList todos={this.state.todos} handleToggle={this.handleToggle}/>
+          <TodoForm currentTodo={this.state.currentTodo} handleInputChange={this.handleInputChange} handleSubmit={sumitHandler} />
+          <TodoList
+            todos={this.state.todos}
+            handleToggle={this.handleToggle}
+            handleRemove={this.handleRemove}
+          />
         </div>
       </div>
     );

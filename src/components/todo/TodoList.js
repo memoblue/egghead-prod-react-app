@@ -1,7 +1,7 @@
 import React from 'react';
 import { TodoListItem } from './TodoListItem'
 
-export const TodoList = ({todos, handleToggle}) => (
+export const TodoList = ({todos, handleToggle, handleRemove}) => (
   <ul className="todolist">
     {todos.map(item => {
       return (
@@ -11,6 +11,7 @@ export const TodoList = ({todos, handleToggle}) => (
           name={item.name}
           checked={item.isComplete}
           handleToggle={handleToggle}
+          handleRemove={handleRemove}
         />
       );
     })}
