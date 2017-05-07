@@ -58,3 +58,7 @@ footer a {
   color: #fff;
   text-decoration: none;
 }
+
+.active {
+  font-weight: bold;
+}
